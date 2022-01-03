@@ -1,0 +1,44 @@
+
+case $1 in
+tmoe-gitee )
+    . <(curl -L gitee.com/mo2/linux/raw/2/2)
+    ;;
+tmoe-github )
+    . <(curl -L git.io/linux.sh)
+    ;;
+tmoe | tmoe-tmoeme )
+    curl -Lo l l.tmoe.me; sh l
+    ;;
+atilo )
+    echo "deb [trusted=yes arch=all] https://yadominjinta.github.io/files/ termux extras" >> $PREFIX/etc/apt/sources.list.d/atilo.list
+    apt update && apt install atilo-cn
+    ;;
+proot-distro )
+    pkg in proot-distro -y
+    ;;
+debian-on-termux )
+      wget -q https://raw.githubusercontent.com/sp4rkie/debian-on-termux/master/debian_on_termux_10.sh && sh debian_on_termux_10.sh
+    ;;
+termuxarch | TermuxArch )
+    pkg install git
+    cd && git clone https://github.com/sdrausty/TermuxArch
+    bash TermuxArch/setupTermuxArch.sh
+    ;;
+termuxarch-nogit | TermuxArch-nogit )
+    pkg install wget
+    wget https://sdrausty.github.io/TermuxArch/setupTermuxArch.sh
+    bash setupTermuxArch.sh
+    ;;
+Nethunter-In-Termux | nethunter-in-termux )
+    curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
+    chmod +x kalinethunter
+    ./kalinethunter
+    echo "Please read  https://github.com/Hax4us/Nethunter-In-Termux/blob/4b1c4c91d31c3ac0903a4da9109999205b757cbb/README.md"
+    ;;
+    version | -v | --version)
+    echo "1"
+    ;;
+    *)
+    echo "Available parameters:tmoe-gitee,tmoe-github,tmoe/tmoe-tmoeme,atilo,proot-distro,debian-on-termux,termuxarch/TermuxArch,termuxarch-nogit/TermuxArch-nogit,Nethunter-In-Termux/nethunter-in-termux,version/-v/--version"
+    ;;
+esac

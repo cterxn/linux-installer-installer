@@ -1,0 +1,15 @@
+{
+	"name": "linux-installer-installer",
+	"version": "1",
+	"arch": "all",
+	"maintainer": "@txmu",
+	"description": "Help install linux installer",
+	"homepage": "https://.com",
+	"depends": ["wget", "curl", "git"],
+	"provides": [],
+	"conflicts": [],
+	"files" : {
+		"lii": "bin/lii"
+	}
+}
+
