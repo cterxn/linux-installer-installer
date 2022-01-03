@@ -4,7 +4,7 @@
 	"arch": "all",
 	"maintainer": "@txmu",
 	"description": "Help install linux installer",
-	"homepage": "https://.com",
+	"homepage": "https://github.com/cterxn/linux-installer-installer",
 	"depends": ["wget", "curl", "git"],
 	"provides": [],
 	"conflicts": [],
